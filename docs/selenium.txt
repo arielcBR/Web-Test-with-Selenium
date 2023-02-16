@@ -35,3 +35,12 @@ Gerenciamento dos drivers
 >> Normalmente envolve adicionar o apontamento nas variáveis de ambiente.
 3. Pode adicionar o pacote WebDriverManager ao seu projeto.
 >>> Não recomendável no momento para Javascript 
+
+BDD: Forma de organização para melhorar a comunicação do time 
+    - Foco na visão de comportamento do Product Owner
+    - Colaborativo - todos podem opinar
+    - Pode escrever os critérios de aceitação em Gherkin (dado-quando-então)
+    - Pode ser usado com base para conectar a automação (Cucumber)
+
+Page objects: Forma de organização da automação de teste pensando em projetos com interfaces 
+              ricas e com separação de papéis.
