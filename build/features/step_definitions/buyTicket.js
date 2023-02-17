@@ -5,9 +5,14 @@ const selenium_webdriver_1 = require("selenium-webdriver");
 const chai_1 = require("chai");
 require('chromedriver');
 const HomePage = require("../../pages/HomePage");
+const chrome = require('selenium-webdriver/chrome');
 (0, cucumber_1.Before)(async function () {
-    this.driver = await new selenium_webdriver_1.Builder().forBrowser('chrome').build();
-    this.driver.manage().setTimeouts({ implicity: 50000 });
+    const options = new chrome.Options().headless();
+    this.driver = await new selenium_webdriver_1.Builder()
+        .setChromeOptions(options)
+        .forBrowser('chrome')
+        .build();
+    this.driver.manage().setTimeouts({ implicit: 100000 });
     this.driver.manage().window().maximize();
     this.homePage = new HomePage(this.driver);
 });

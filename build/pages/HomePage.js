@@ -1,4 +1,5 @@
 const BasePage = require("./BasePage");
+const By = require('selenium-webdriver').By;
 class HomePage extends BasePage {
     constructor(driver) {
         super(driver);

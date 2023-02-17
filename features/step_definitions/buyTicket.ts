@@ -2,12 +2,17 @@ import { Given, When, Then, Before, After } from '@cucumber/cucumber';
 import { Builder } from 'selenium-webdriver';
 import { assert } from 'chai';
 require('chromedriver');
-
 import HomePage = require('../../pages/HomePage');
+const chrome = require('selenium-webdriver/chrome');
 
 Before(async function () {
-    this.driver = await new Builder().forBrowser('chrome').build();
-    this.driver.manage().setTimeouts({ implicity: 50000 });
+    const options = new chrome.Options().headless();
+
+    this.driver = await new Builder()
+        .setChromeOptions(options)
+        .forBrowser('chrome')
+        .build();
+    this.driver.manage().setTimeouts({ implicit: 100000 });
     this.driver.manage().window().maximize();
 
     this.homePage = new HomePage(this.driver);
