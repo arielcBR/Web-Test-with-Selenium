@@ -7,9 +7,9 @@ require('chromedriver');
 const HomePage = require("../../pages/HomePage");
 const chrome = require('selenium-webdriver/chrome');
 (0, cucumber_1.Before)(async function () {
-    const options = new chrome.Options().headless();
+    //const options = new chrome.Options().headless();
     this.driver = await new selenium_webdriver_1.Builder()
-        .setChromeOptions(options)
+        //.setChromeOptions(options)
         .forBrowser('chrome')
         .build();
     this.driver.manage().setTimeouts({ implicit: 100000 });

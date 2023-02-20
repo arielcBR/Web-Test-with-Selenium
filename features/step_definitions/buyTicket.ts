@@ -5,14 +5,15 @@ require('chromedriver');
 import HomePage = require('../../pages/HomePage');
 const chrome = require('selenium-webdriver/chrome');
 
+
 Before(async function () {
-    const options = new chrome.Options().headless();
+    //const options = new chrome.Options().headless();
 
     this.driver = await new Builder()
-        .setChromeOptions(options)
+        //.setChromeOptions(options)
         .forBrowser('chrome')
         .build();
-    this.driver.manage().setTimeouts({ implicit: 100000 });
+    this.driver.manage().setTimeouts({ implicit: 1000 });
     this.driver.manage().window().maximize();
 
     this.homePage = new HomePage(this.driver);
